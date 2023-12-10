@@ -1,0 +1,42 @@
+[2023-12-10 22:39:57,309] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: pipeline.predict manual__2023-12-10T17:33:35.926750+00:00 [queued]>
+[2023-12-10 22:39:57,322] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: pipeline.predict manual__2023-12-10T17:33:35.926750+00:00 [queued]>
+[2023-12-10 22:39:57,323] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2023-12-10 22:39:57,323] {taskinstance.py:1357} INFO - Starting attempt 1 of 6
+[2023-12-10 22:39:57,323] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2023-12-10 22:39:57,349] {taskinstance.py:1377} INFO - Executing <Task(BashOperator): predict> on 2023-12-10 17:33:35.926750+00:00
+[2023-12-10 22:39:57,351] {standard_task_runner.py:52} INFO - Started process 25790 to run task
+[2023-12-10 22:39:57,360] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'pipeline', 'predict', 'manual__2023-12-10T17:33:35.926750+00:00', '--job-id', '28', '--raw', '--subdir', 'DAGS_FOLDER/final_script.py', '--cfg-path', '/tmp/tmp1mcmln03', '--error-file', '/tmp/tmpogg1a73o']
+[2023-12-10 22:39:57,360] {standard_task_runner.py:80} INFO - Job 28: Subtask predict
+[2023-12-10 22:39:57,406] {task_command.py:369} INFO - Running <TaskInstance: pipeline.predict manual__2023-12-10T17:33:35.926750+00:00 [running]> on host vmac-VirtualBox
+[2023-12-10 22:39:57,461] {taskinstance.py:1569} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=Admin
+AIRFLOW_CTX_DAG_ID=pipeline
+AIRFLOW_CTX_TASK_ID=predict
+AIRFLOW_CTX_EXECUTION_DATE=2023-12-10T17:33:35.926750+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-12-10T17:33:35.926750+00:00
+[2023-12-10 22:39:57,462] {subprocess.py:62} INFO - Tmp dir root location: 
+ /tmp
+[2023-12-10 22:39:57,462] {subprocess.py:74} INFO - Running command: ['bash', '-c', 'python3 /home/vmac/lab3/scripts/predict.py']
+[2023-12-10 22:39:57,493] {subprocess.py:85} INFO - Output:
+[2023-12-10 22:39:59,406] {subprocess.py:92} INFO - 2023/12/10 22:39:59 INFO mlflow.tracking.fluent: Experiment with name 'model_testing' does not exist. Creating a new experiment.
+[2023-12-10 22:39:59,728] {subprocess.py:92} INFO - [[6264   58]
+[2023-12-10 22:39:59,728] {subprocess.py:92} INFO -  [1625   24]] 0.02772963604852686
+[2023-12-10 22:39:59,728] {subprocess.py:92} INFO - Traceback (most recent call last):
+[2023-12-10 22:39:59,728] {subprocess.py:92} INFO -   File "/home/vmac/lab3/scripts/predict.py", line 21, in <module>
+[2023-12-10 22:39:59,728] {subprocess.py:92} INFO -     mlflow.log_metrics('score',float(score))
+[2023-12-10 22:39:59,728] {subprocess.py:92} INFO -   File "/home/vmac/lab3/lab3/lib/python3.10/site-packages/mlflow/tracking/fluent.py", line 825, in log_metrics
+[2023-12-10 22:39:59,751] {subprocess.py:92} INFO -     metrics_arr = [Metric(key, value, timestamp, step or 0) for key, value in metrics.items()]
+[2023-12-10 22:39:59,751] {subprocess.py:92} INFO - AttributeError: 'str' object has no attribute 'items'
+[2023-12-10 22:40:00,083] {subprocess.py:96} INFO - Command exited with return code 1
+[2023-12-10 22:40:00,091] {taskinstance.py:1889} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/vmac/lab3/lab3/lib/python3.10/site-packages/airflow/operators/bash.py", line 194, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2023-12-10 22:40:00,105] {taskinstance.py:1395} INFO - Marking task as UP_FOR_RETRY. dag_id=pipeline, task_id=predict, execution_date=20231210T173335, start_date=20231210T173957, end_date=20231210T174000
+[2023-12-10 22:40:00,137] {standard_task_runner.py:92} ERROR - Failed to execute job 28 for task predict (Bash command failed. The command returned a non-zero exit code 1.; 25790)
+[2023-12-10 22:40:00,165] {local_task_job.py:156} INFO - Task exited with return code 1
+[2023-12-10 22:40:00,180] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

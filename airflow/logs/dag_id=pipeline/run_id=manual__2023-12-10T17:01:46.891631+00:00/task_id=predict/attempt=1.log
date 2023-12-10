@@ -1,0 +1,29 @@
+[2023-12-10 22:07:03,919] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: pipeline.predict manual__2023-12-10T17:01:46.891631+00:00 [queued]>
+[2023-12-10 22:07:03,924] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: pipeline.predict manual__2023-12-10T17:01:46.891631+00:00 [queued]>
+[2023-12-10 22:07:03,924] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2023-12-10 22:07:03,924] {taskinstance.py:1357} INFO - Starting attempt 1 of 6
+[2023-12-10 22:07:03,924] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2023-12-10 22:07:03,959] {taskinstance.py:1377} INFO - Executing <Task(BashOperator): predict> on 2023-12-10 17:01:46.891631+00:00
+[2023-12-10 22:07:03,961] {standard_task_runner.py:52} INFO - Started process 20398 to run task
+[2023-12-10 22:07:03,966] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'pipeline', 'predict', 'manual__2023-12-10T17:01:46.891631+00:00', '--job-id', '17', '--raw', '--subdir', 'DAGS_FOLDER/final_script.py', '--cfg-path', '/tmp/tmpn8no0oto', '--error-file', '/tmp/tmpjjafs7l5']
+[2023-12-10 22:07:03,966] {standard_task_runner.py:80} INFO - Job 17: Subtask predict
+[2023-12-10 22:07:03,995] {task_command.py:369} INFO - Running <TaskInstance: pipeline.predict manual__2023-12-10T17:01:46.891631+00:00 [running]> on host vmac-VirtualBox
+[2023-12-10 22:07:04,038] {taskinstance.py:1569} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=Admin
+AIRFLOW_CTX_DAG_ID=pipeline
+AIRFLOW_CTX_TASK_ID=predict
+AIRFLOW_CTX_EXECUTION_DATE=2023-12-10T17:01:46.891631+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-12-10T17:01:46.891631+00:00
+[2023-12-10 22:07:04,039] {subprocess.py:62} INFO - Tmp dir root location: 
+ /tmp
+[2023-12-10 22:07:04,039] {subprocess.py:74} INFO - Running command: ['bash', '-c', 'python3 /home/vmac/lab3/scripts/predict.py']
+[2023-12-10 22:07:04,045] {subprocess.py:85} INFO - Output:
+[2023-12-10 22:07:04,820] {subprocess.py:92} INFO - [[6264   58]
+[2023-12-10 22:07:04,820] {subprocess.py:92} INFO -  [1625   24]] 0.02772963604852686
+[2023-12-10 22:07:04,954] {subprocess.py:96} INFO - Command exited with return code 0
+[2023-12-10 22:07:04,970] {taskinstance.py:1395} INFO - Marking task as SUCCESS. dag_id=pipeline, task_id=predict, execution_date=20231210T170146, start_date=20231210T170703, end_date=20231210T170704
+[2023-12-10 22:07:04,984] {local_task_job.py:156} INFO - Task exited with return code 0
+[2023-12-10 22:07:04,996] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

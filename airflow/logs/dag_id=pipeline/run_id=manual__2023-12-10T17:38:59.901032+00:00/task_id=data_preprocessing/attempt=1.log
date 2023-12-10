@@ -1,0 +1,29 @@
+[2023-12-10 22:39:07,830] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: pipeline.data_preprocessing manual__2023-12-10T17:38:59.901032+00:00 [queued]>
+[2023-12-10 22:39:07,845] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: pipeline.data_preprocessing manual__2023-12-10T17:38:59.901032+00:00 [queued]>
+[2023-12-10 22:39:07,845] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2023-12-10 22:39:07,845] {taskinstance.py:1357} INFO - Starting attempt 1 of 6
+[2023-12-10 22:39:07,845] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2023-12-10 22:39:07,865] {taskinstance.py:1377} INFO - Executing <Task(BashOperator): data_preprocessing> on 2023-12-10 17:38:59.901032+00:00
+[2023-12-10 22:39:07,868] {standard_task_runner.py:52} INFO - Started process 25742 to run task
+[2023-12-10 22:39:07,874] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'pipeline', 'data_preprocessing', 'manual__2023-12-10T17:38:59.901032+00:00', '--job-id', '25', '--raw', '--subdir', 'DAGS_FOLDER/final_script.py', '--cfg-path', '/tmp/tmprkvle2_4', '--error-file', '/tmp/tmp0lgqm8fw']
+[2023-12-10 22:39:07,874] {standard_task_runner.py:80} INFO - Job 25: Subtask data_preprocessing
+[2023-12-10 22:39:07,936] {task_command.py:369} INFO - Running <TaskInstance: pipeline.data_preprocessing manual__2023-12-10T17:38:59.901032+00:00 [running]> on host vmac-VirtualBox
+[2023-12-10 22:39:08,085] {taskinstance.py:1569} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=Admin
+AIRFLOW_CTX_DAG_ID=pipeline
+AIRFLOW_CTX_TASK_ID=data_preprocessing
+AIRFLOW_CTX_EXECUTION_DATE=2023-12-10T17:38:59.901032+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-12-10T17:38:59.901032+00:00
+[2023-12-10 22:39:08,086] {subprocess.py:62} INFO - Tmp dir root location: 
+ /tmp
+[2023-12-10 22:39:08,087] {subprocess.py:74} INFO - Running command: ['bash', '-c', 'python3 /home/vmac/lab3/scripts/data_preprocessing.py']
+[2023-12-10 22:39:08,097] {subprocess.py:85} INFO - Output:
+[2023-12-10 22:39:12,881] {subprocess.py:96} INFO - Command exited with return code 0
+[2023-12-10 22:39:12,946] {taskinstance.py:1395} INFO - Marking task as SUCCESS. dag_id=pipeline, task_id=data_preprocessing, execution_date=20231210T173859, start_date=20231210T173907, end_date=20231210T173912
+[2023-12-10 22:39:12,973] {local_task_job.py:220} WARNING - State of this instance has been externally set to success. Terminating instance.
+[2023-12-10 22:39:12,981] {process_utils.py:125} INFO - Sending Signals.SIGTERM to group 25742. PIDs of all processes in the group: [25742]
+[2023-12-10 22:39:12,981] {process_utils.py:80} INFO - Sending the signal Signals.SIGTERM to group 25742
+[2023-12-10 22:39:12,983] {process_utils.py:75} INFO - Process psutil.Process(pid=25742, status='terminated', exitcode=0, started='22:39:07') (25742) terminated with exit code 0
