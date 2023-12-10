@@ -1,0 +1,9 @@
+pandas
+numpy
+catboost
+gdown
+airflow
+mlflow
+scikit-learn
+pysqlite3
+psycopg2
